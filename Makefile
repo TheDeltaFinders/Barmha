@@ -1,6 +1,6 @@
-WXVERSION = 3.0
-WXFLAGS   = `wx-config --version=$(WXVERSION) --cxxflags`
-WXLIBS    = `wx-config --version=$(WXVERSION) --libs all --gl-libs`
+
+WXFLAGS   = `wx-config  --cxxflags`
+WXLIBS    = `wx-config  --libs all --gl-libs`
 
 INCDIR   = include
 SRCDIR   = src
@@ -16,10 +16,10 @@ SOURCES := $(wildcard $(SRCDIRS:%=src/%/*.cpp)) $(wildcard src/*.cpp)
 
 
 
-INCLUDES  = -Iinclude -I/home/pranphy/MyRoot/include
-LINKDIR   = -L$(LIBDIR) -L/home/pranphy/MyRoot/lib
+INCLUDES  = -Iinclude 
+LINKDIR   = -L$(LIBDIR)
 OGLIB     = -lglut -lGL -lGLU
-GENLIBS   = -lSOIL
+GENLIBS   = 
 
 CXX       = g++
 CXXLIBS   =
