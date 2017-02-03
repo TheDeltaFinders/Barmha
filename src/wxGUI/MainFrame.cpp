@@ -11,8 +11,10 @@ MainFrame::MainFrame(wxWindow* Parent, wxWindowID id){
     SetClientSize(wxSize(640, 480));
     SetMinSize(wxSize(400,300));
     CreateMenuBar();
-    this->Connect( ID_AboutHelpSubItem, wxEVT_COMMAND_MENU_SELECTED, 
-        wxCommandEventHandler( MainFrame::OnAboutClicked ) )
+    // this->Connect( ID_AboutHelpSubItem, wxEVT_COMMAND_MENU_SELECTED, 
+    //      MainFrame::OnAboutClick );   
+
+    this->Bind(wxEVT_COMMAND_MENU_SELECTED, &MainFrame::OnAboutClick,this, ID_AboutHelpSubItem);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
 }
 
 MainFrame::~MainFrame(){
@@ -35,7 +37,7 @@ void MainFrame::CreateStatusBar(){
 
 }
 
-void OnAboutClicked(wxEvent& evt)
+void OnAboutClick(wxCommandEvent& evt)
 {
     wxMessageBox("Hello there ","I am here");
 }

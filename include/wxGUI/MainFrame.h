@@ -1,5 +1,5 @@
 #pragma once
-
+#include <wx/event.h>
 #include <wx/frame.h>
 #include <wx/menu.h>
 class MainFrame: public wxFrame{
@@ -17,5 +17,5 @@ private:
 
     void CreateMenuBar();
     void CreateStatusBar();
-    void OnAboutClick(wxEvent&);
+    void OnAboutClick(wxCommandEvent&);
 };
