@@ -35,7 +35,7 @@ void DisplayCanvas::OnPaint(wxPaintEvent& WXUNUSED(event))
         //GameStage.LoadAllImages();
         OneTime = true;
     }
-    GameStage.CleanStage();
+    //GameStage.CleanStage();
     //Render();
 }
 

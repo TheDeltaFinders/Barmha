@@ -40,10 +40,6 @@ void MainFrame::CreateMenuBar(){
     HelpMenu->Append(AboutMItem);
     OnlyMenuBar->Append(HelpMenu, _("Help"));
     SetMenuBar(OnlyMenuBar);
-
-
-
-
 }
 
 void MainFrame::CreateStatusBar(){
