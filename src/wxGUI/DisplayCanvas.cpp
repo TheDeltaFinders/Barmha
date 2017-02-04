@@ -11,8 +11,7 @@ END_EVENT_TABLE()
 
 
 DisplayCanvas::DisplayCanvas(wxWindow*Parent):
-    wxGLCanvas(Parent, ID_DisplayCanvas,  wxDefaultPosition, wxSize(150,100),
-            0, wxT("GLCanvas"))
+    wxGLCanvas(Parent,wxGLAttributes().PlatformDefaults().DoubleBuffer())
 {
     int argc = 1;
     char* argv[1] = { wxString((wxTheApp->argv)[0]).char_str() };
@@ -28,7 +27,7 @@ void DisplayCanvas::Initialize()
 
 void DisplayCanvas::OnPaint(wxPaintEvent& WXUNUSED(event))
 {
-    SetCurrent();
+    SetCurrent(*MyContext);
     static bool OneTime = false;
     if(OneTime == false)
     {
