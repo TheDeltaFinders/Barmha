@@ -28,5 +28,6 @@ private:
     void CreateMenuBar();
     void CreateStatusBar();
     void OnAboutClick(wxCommandEvent&);
+    void OnClick(wxEvent&);
     void CreateMainPanel();
 };
